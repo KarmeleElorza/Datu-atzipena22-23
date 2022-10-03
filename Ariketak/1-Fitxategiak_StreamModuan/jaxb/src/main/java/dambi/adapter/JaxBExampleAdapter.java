@@ -27,6 +27,7 @@ public class JaxBExampleAdapter
             country.setName( "Spain" );
             country.setCapital( "Madrid" );
             country.setContinent( "Europe" );
+            country.setPopulation(3223); //ppopulacion real = 3223000000
 
 
             country.setFoundation( LocalDate.of( 1469, 10, 19 ) );
