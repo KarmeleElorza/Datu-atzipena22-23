@@ -135,24 +135,18 @@ public class MainMenua {
         ArrayList<String> bizkaia = new ArrayList<String>();
         ArrayList<String> gipuzkoa = new ArrayList<String>();
         for (int i = 0; i < mendiak.size() - 3; i++) {
-            if (i == 0 || i == 1 || i == 2) {
-                araba.add(mendiak.get(i));
-                bizkaia.add(mendiak.get(i));
-                gipuzkoa.add(mendiak.get(i));
+            if (i == 0) {
+                araba.add(mendiak.get(i) + ";" + mendiak.get(i + 1) + ";" + mendiak.get(i + 2));
+                bizkaia.add(mendiak.get(i) + ";" + mendiak.get(i + 1) + ";" + mendiak.get(i + 2));
+                gipuzkoa.add(mendiak.get(i) + ";" + mendiak.get(i + 1) + ";" + mendiak.get(i + 2));
             }
             if (i > 2) {
                 if (mendiak.get(i + 2).toLowerCase().startsWith("araba")) {
-                    araba.add(mendiak.get(i));
-                    araba.add(mendiak.get(i + 1));
-                    araba.add(mendiak.get(i + 2));
+                    araba.add(mendiak.get(i) + ";" + mendiak.get(i + 1) + ";" + mendiak.get(i + 2));
                 } else if (mendiak.get(i + 2).toLowerCase().startsWith("bizkaia")) {
-                    bizkaia.add(mendiak.get(i));
-                    bizkaia.add(mendiak.get(i + 1));
-                    bizkaia.add(mendiak.get(i + 2));
+                    bizkaia.add(mendiak.get(i) + ";" + mendiak.get(i + 1) + ";" + mendiak.get(i + 2));
                 } else if (mendiak.get(i + 2).toLowerCase().startsWith("gipuzkoa")) {
-                    gipuzkoa.add(mendiak.get(i));
-                    gipuzkoa.add(mendiak.get(i + 1));
-                    gipuzkoa.add(mendiak.get(i + 2));
+                    gipuzkoa.add(mendiak.get(i) + ";" + mendiak.get(i + 1) + ";" + mendiak.get(i + 2));
                 }
             }
         }
@@ -168,9 +162,8 @@ public class MainMenua {
     public static void idatziBakoitza(String fileName, ArrayList<String> probintzia){
         File csvFile = new File(fileName);
         try (PrintWriter csvWriter = new PrintWriter(new FileWriter(csvFile));) {
-            for (int i = 0; i < probintzia.size() - 2; i++) {
-                String linea = probintzia.get(i) + ";" + probintzia.get(i + 1) + ";" + probintzia.get(i + 2);
-                csvWriter.println(linea);
+            for (int i = 0; i < probintzia.size(); i++) {
+                csvWriter.println(probintzia.get(i));
             }
         } catch (IOException e) {
             e.printStackTrace();
