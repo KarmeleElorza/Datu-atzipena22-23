@@ -9,4 +9,6 @@ public class AccesingRelationalDataApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(AccesingRelationalDataApplication.class, args);
 	}
+
 }
+	

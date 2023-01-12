@@ -1,12 +1,13 @@
-package dambi;
+package dambi.accessingmongoumeak;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AccesingRelationalDataApplication {
+public class ProgramaNagusia {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AccesingRelationalDataApplication.class, args);
+		SpringApplication.run(ProgramaNagusia.class, args);
 	}
+
 }
